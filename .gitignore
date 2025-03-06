@@ -1,0 +1,11 @@
+# Ignorar arquivos do Visual Studio
+.vs/
+*.vsidx
+*.suo
+*.user
+*.log
+*.tmp
+
+# Build
+bin/
+obj/
