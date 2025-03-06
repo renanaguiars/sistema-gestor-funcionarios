@@ -1,0 +1,14 @@
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\bin\Debug\net6.0\CadastroFuncionarios.exe
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\bin\Debug\net6.0\CadastroFuncionarios.deps.json
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\bin\Debug\net6.0\CadastroFuncionarios.runtimeconfig.json
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\bin\Debug\net6.0\CadastroFuncionarios.dll
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\bin\Debug\net6.0\CadastroFuncionarios.pdb
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\CadastroFuncionarios.GeneratedMSBuildEditorConfig.editorconfig
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\CadastroFuncionarios.AssemblyInfoInputs.cache
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\CadastroFuncionarios.AssemblyInfo.cs
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\CadastroFuncionarios.csproj.CoreCompileInputs.cache
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\CadastroFuncionarios.dll
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\refint\CadastroFuncionarios.dll
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\CadastroFuncionarios.pdb
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\CadastroFuncionarios.genruntimeconfig.cache
+C:\projetos\CadastroFuncionarios\CadastroFuncionarios\obj\Debug\net6.0\ref\CadastroFuncionarios.dll
