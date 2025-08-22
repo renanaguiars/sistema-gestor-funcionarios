@@ -15,15 +15,15 @@ class Program
         Console.Clear();
         int opcao;
 
-        Console.WriteLine("\n==== SISTEMA DE GESTÃO DE FUNCIONÁRIOS ====");
-        Console.WriteLine("\n[1] - Cadastrar Funcionário");
-        Console.WriteLine("[2] - Listar Funcionários");
-        Console.WriteLine("[3] - Buscar por Nome");
-        Console.WriteLine("[4] - Atualizar Salário");
-        Console.WriteLine("[5] - Remover Funcionário");
-        Console.WriteLine("[6] - Calcular Folha de Pagamento");
+        Console.WriteLine("==== GESTOR DE FUNCIONÁRIOS 2.0 ====\n");
+        Console.WriteLine("[1] - Cadastrar funcionário");
+        Console.WriteLine("[2] - Listar todos os funcionários");
+        Console.WriteLine("[3] - Buscar funcionário");
+        Console.WriteLine("[4] - Atualizar salário");
+        Console.WriteLine("[5] - Demitir/Remover funcionário");
+        Console.WriteLine("[6] - Calcular folha de pagamento");
         Console.WriteLine("[0] - Sair");
-        Console.WriteLine("\n==========================================");
+        Console.WriteLine("\n======================================");
         Console.Write("\nDigite a opção que deseja: ");
         
         opcao = int.Parse(Console.ReadLine()!);
@@ -49,7 +49,7 @@ class Program
                 CalcularFolhaDePagto();
                 break;
             case 0:
-                Console.WriteLine("Sistema encerrado.");
+                Console.WriteLine("\nSistema encerrado.");
                 break;
             default:
                 Console.WriteLine("[ERRO] - Opção inválida!");
@@ -63,33 +63,44 @@ class Program
     static void CadastrarFuncionario()
     {
         Console.Clear();
-        Console.Write("(CADASTRAR_FUNC) - Nome: ");
+        Console.WriteLine("==== CADASTRO DE FUNCIONÁRIO ====\n");
+        Thread.Sleep(2000);
+        Console.Write("Nome: ");
         string nome = Console.ReadLine()!;
         if (string.IsNullOrWhiteSpace(nome))
         {
-            Console.WriteLine("[ERRO] - O nome não pode estar vazio!");
+            Console.WriteLine("\n[ERRO] - O nome do funcionário não pode estar vazio!");
             Thread.Sleep(2000);
             ExibirMenu();
         }
 
-        Console.Write("(CADASTRAR_FUNC) - Cargo: ");
+        Console.Write("Idade: ");
+        int idade = int.Parse(Console.ReadLine()!);
+        if (idade < 18)
+        {
+            Console.WriteLine("\n[ERRO] - A idade do funcionário deve ser maior ou igual a 18 anos.");
+            Thread.Sleep(2000);
+            ExibirMenu();
+        }
+
+        Console.Write("Cargo: ");
         string cargo = Console.ReadLine()!;
         if (string.IsNullOrWhiteSpace(cargo))
         {
-            Console.WriteLine("[ERRO] - O cargo não pode estar vazio!");
+            Console.WriteLine("\n[ERRO] - O cargo do funcionário não pode estar vazio!");
             Thread.Sleep(2000);
             ExibirMenu();
         }
 
-        Console.Write("(CADASTRAR_FUNC) - Salário: ");
+        Console.Write("Salário: ");
         double salario = double.Parse(Console.ReadLine()!);
         if(salario <= 0){
-            Console.WriteLine("[ERRO] - O salário deve ser maior que zero!");
+            Console.WriteLine("\n[ERRO] - O salário do funcionário deve ser maior que zero!");
             Thread.Sleep(2000);
             ExibirMenu();
         }
 
-        Funcionario f = new Funcionario(nome, cargo, salario);
+        Funcionario f = new Funcionario(nome, idade, cargo, salario);
         funcionarios.Add(f);
 
         Console.WriteLine("\n[SUCESSO] - Funcionário cadastrado!");
@@ -102,10 +113,11 @@ class Program
     static void ListarFuncionarios()
     {
         Console.Clear();
-        Console.WriteLine("\n=== Quadro de Funcionários ===");
+        Console.WriteLine("==== QUADRO DE FUNCIONÁRIOS ====\n");
+        Thread.Sleep(2000);
         if(funcionarios.Count == 0)
         {
-            Console.WriteLine("[ERRO] - Não existem funcionários cadastrados.");
+            Console.WriteLine("Não existem funcionários cadastrados.");
         } else
         {
             foreach (var f in funcionarios)
@@ -122,9 +134,11 @@ class Program
     static void BuscarFuncionario()
     {
         Console.Clear();
+        Console.WriteLine("==== BUSCAR UM FUNCIONÁRIO ====\n");
+        Thread.Sleep(2000);
         if (funcionarios.Count > 0) 
         {
-            Console.Write("\n(BUSCAR_FUNC) - Nome: ");
+            Console.Write("Nome do funcionário: ");
             string nomeBusca = Console.ReadLine()!;
             bool existe = false;
 
@@ -139,12 +153,12 @@ class Program
             
             if (!existe)
             {
-                Console.WriteLine($"[ERRO] - O/A funcionário(a) {nomeBusca} não consta no banco de dados.");
+                Console.WriteLine($"\n[ERRO] - O/A funcionário(a) {nomeBusca} não consta no banco de dados.");
             }
         }
         else
         {
-            Console.WriteLine("[ERRO] - Não existem funcionários cadastrados.");
+            Console.WriteLine("Não existem funcionários cadastrados.");
         }
 
         Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal...");
@@ -156,9 +170,11 @@ class Program
     static void AtualizarSalario()
     {
         Console.Clear();
+        Console.WriteLine("==== REAJUSTE SALARIAL ====\n");
+        Thread.Sleep(2000);
         if (funcionarios.Count > 0)
         {
-            Console.Write("\n(ATUALIZAR_SAL) - Nome:");
+            Console.Write("Nome do funcionário: ");
             string nomeBusca = Console.ReadLine()!;
             bool existe = false;
 
@@ -166,7 +182,7 @@ class Program
             {
                 if (f.Nome.ToLower() == nomeBusca.ToLower())
                 {
-                    Console.Write("Novo Salário: ");
+                    Console.Write("Novo salário: ");
                     f.Salario = double.Parse(Console.ReadLine()!);
                     Console.WriteLine("[SUCESSO] - Salário atualizado!");
                     existe = true;
@@ -181,7 +197,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("[ERRO] - Não existem funcionários cadastrados.");
+            Console.WriteLine("Não existem funcionários cadastrados.");
         }
 
         Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal...");
@@ -192,9 +208,11 @@ class Program
     static void RemoverFuncionario()
     {
         Console.Clear();
+        Console.WriteLine("==== RECURSOS HUMANOS ====\n");
+        Thread.Sleep(2000);
         if (funcionarios.Count > 0)
         {
-            Console.Write("\n(REMOVER_FUNC) - Nome: ");
+            Console.Write("Nome do funcionário que deseja remover: ");
             string nomeBusca = Console.ReadLine()!;
             bool existe = false;
 
@@ -202,21 +220,31 @@ class Program
             {
                 if (funcionarios[i].Nome.ToLower() == nomeBusca.ToLower())
                 {
-                    funcionarios.RemoveAt(i);
-                    Console.WriteLine("[SUCESSO] - Funcionário removido!");
-                    existe = true; 
-                    break;
+                    Console.Write($"\nTem certeza que deseja demitir o funcionário {nomeBusca} ? ");
+                    string resp = Console.ReadLine()!;
+                    if(resp == "Sim" || resp == "sim")
+                    {
+                        funcionarios.RemoveAt(i);
+                        Console.WriteLine("\n[SUCESSO] - Funcionário removido!");
+                        existe = true;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nOperação cancelada.");
+                        break;
+                    }
                 }
             }
 
             if (!existe)
             {
-                Console.WriteLine("[ERRO] - Funcionário não encontrado!");
+                Console.WriteLine($"\n[ERRO] - Funcionário {nomeBusca} não foi encontrado na base de dados.");
             }
         }
         else
         {
-            Console.WriteLine("[ERRO] - Não existem funcionários cadastrados.");
+            Console.WriteLine("Não existem funcionários cadastrados.");
         }
 
         Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal...");
@@ -226,6 +254,8 @@ class Program
     static void CalcularFolhaDePagto()
     {
         Console.Clear();
+        Console.WriteLine("==== FOLHA DE PAGAMENTO ====\n");
+        Thread.Sleep(2000);
         double total = 0;
 
         foreach (var f in funcionarios)
@@ -233,7 +263,7 @@ class Program
             total += f.Salario;
         }
 
-        Console.WriteLine($"Folha de Pagamento Total: {total:C}");
+        Console.WriteLine($"Folha de pagamento total: {total:C}");
         Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal...");
         Console.ReadKey();
         ExibirMenu();

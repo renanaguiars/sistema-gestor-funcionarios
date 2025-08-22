@@ -8,7 +8,7 @@ namespace CadastroFuncionarios
         public string Cargo { get; set; }
         public double Salario { get; set; }
 
-        public Funcionario(string nome, string cargo, double salario) : base(nome)
+        public Funcionario(string nome, int idade, string cargo, double salario) : base(nome, idade)
         {
             Cargo = cargo;
             Salario = salario;
@@ -16,7 +16,7 @@ namespace CadastroFuncionarios
 
         public void ExibirFuncionario()
         {
-            Console.WriteLine($"Nome: {Nome} - Cargo: {Cargo} - Salário: {Salario:C}");
+            Console.WriteLine($"{Nome} - {Idade} anos - {Cargo} - Salário: {Salario:C}");
         }
     }
 }
